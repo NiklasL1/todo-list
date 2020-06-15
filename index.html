@@ -11,13 +11,16 @@
 
 <body>
     
-    <div class="container">
+    <div class="container bg-light" id="mainGrid">
         <div class="row">
-          <div class="col-sm">
-            editable title
+          <div class="col-2 border align-middle">
+            <input class= "bg-light" size="12" readonly="readonly" id="listTitle" />
           </div>
-          <div class="col-sm">
-            "add new item"    "+ button"
+          <div class="col-10 border align-middle">
+            <form class="form-inline">
+             <input id="addItemInput" class="form-control" type="text" placeholder="Add an item...">
+             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">+</button>
+            </form>
           </div>
         </div>    
       </div>
