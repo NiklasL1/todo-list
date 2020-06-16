@@ -5,12 +5,14 @@ editTitle.ondblclick = function(){
 
 let addItemButton = document.getElementById('addItemButton');
 let addItemInput = document.getElementById('addItemInput');
-let mainGrid = document.getElementById('mainGrid');
 
 addItemButton.addEventListener("click", (event) => {
-    event.preventDefault; 
-    let addItem = addItemInput.value;
-    mainGrid.insertAdjacentHTML("beforeend", '<div class="row"><div class="col-2 border align-middle"></div><div id="insertItem" class="col-10 border align-middle"></div></div>'); 
-    document.getElementById("insertItem").innerHTML = addItem;
-    return false;       
+  if (addItemInput.value === "") {
+    alert("Cannot add empty item!");
+  }
+  else {
+    document.getElementById("insertItem").innerHTML += `<div class="row">
+    <div class="col-2 border align-middle">"icons go here"</div>
+    <div class="col-10 border align-middle">${addItemInput.value}</div></div>`;
+  }      
 });

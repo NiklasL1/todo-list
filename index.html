@@ -11,18 +11,17 @@
 
 <body>
     
-    <div class="container bg-light" id="mainGrid">
+    <div class="container bg-light">
         <div class="row">
           <div class="col-2 border align-middle">
-            <input class= "bg-light" size="12" readonly="readonly" id="listTitle" />
+            <input class= "bg-light" size="12" readonly="readonly" id="listTitle" placeholder="Add List Title"/>
           </div>
-          <div class="col-10 border align-middle">
-            <form class="form-inline">
+          <div class="col-10 border align-middle">                    
              <input id="addItemInput" class="form-control" type="text" placeholder="Add an item...">
-             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">+</button>
-            </form>
+             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">+</button>                   
           </div>
-        </div>    
+        </div>
+        <div id="insertItem"></div>    
       </div>
 
 
