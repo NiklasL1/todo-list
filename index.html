@@ -13,12 +13,14 @@
     
     <div class="container bg-light">
         <div class="row">
-          <div class="col-2 border align-middle">
+          <div class="col-2 border d-flex align-middle justify-content-center">
             <input class= "bg-light" size="12" readonly="readonly" id="listTitle" placeholder="Add List Title"/>
           </div>
-          <div class="col-10 border align-middle">                    
-             <input id="addItemInput" class="form-control" type="text" placeholder="Add an item...">
-             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">+</button>                   
+          <div class="col-10 border d-flex align-middle justify-content-center pt-2 pb-2">                    
+             <input id="addItemInput" class="form-control mr-2" type="text" placeholder="Add an item...">
+             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+             </button>                   
           </div>
         </div>
         <div id="insertItem"></div>    
@@ -36,7 +38,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <script src="./src/index.js"></script>
+    <script src="./src/index.js"></script>    
+    <script src="https://use.fontawesome.com/58eb6c4028.js"></script>
+
 </body>
 
 </html>
