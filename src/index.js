@@ -12,7 +12,12 @@ addItemButton.addEventListener("click", (event) => {
   }
   else {
     document.getElementById("insertItem").innerHTML += `<div class="row">
-    <div class="col-2 border align-middle">"icons go here"</div>
+    <div class="col-2 border align-middle d-flex justify-content-center">
+    <i class="p-2 fa fa-check-square fa-1" aria-hidden="true"></i>
+    <i class="p-2 fa fa-trash fa-1" aria-hidden="true"></i>    
+    </div>
     <div class="col-10 border align-middle">${addItemInput.value}</div></div>`;
+
+    document.getElementById('addItemInput').value = "";
   }      
 });
