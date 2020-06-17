@@ -11,13 +11,16 @@ addItemButton.addEventListener("click", () => {
     alert("Cannot add empty item!");
   }
   else {
-    document.getElementById("insertItem").insertAdjacentHTML("afterbegin", `<div class="row">
-    <div class="col-2 border align-middle d-flex justify-content-center">
+    document.getElementById("insertItem").insertAdjacentHTML("afterbegin", `<li class="container row">    
+    <div class="col-2 bg-light border d-flex align-middle justify-content-center">
     <i class="p-2 fa fa-check-square" aria-hidden="true"></i>
     <i class="p-2 fa fa-trash" aria-hidden="true"></i>
-    <i class="p-2 fa fa-pencil" aria-hidden="true"></i>    
+    <i class="p-2 fa fa-pencil" aria-hidden="true"></i>
     </div>
-    <div class="col-10 border align-middle">${addItemInput.value}</div></div>`); 
+    <div class="col-10 bg-light border align-middle">
+    ${addItemInput.value}
+    </div>
+    </li>`); 
 
     document.getElementById('addItemInput').value = "";    
   }      

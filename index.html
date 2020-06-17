@@ -11,20 +11,28 @@
 
 <body>  
     
-    <div class="container bg-light">
-        <div class="row">
-          <div class="col-2 border d-flex align-middle justify-content-center">
+  <div class="container">
+    <!-- Header -->
+          <div class="header">
+            <p>maybe add the date in here</p>
             <input class= "bg-light" size="12" readonly="readonly" id="listTitle" placeholder="Add List Title"/>
           </div>
-          <div class="col-10 border d-flex align-middle justify-content-center pt-2 pb-2">                    
-             <input id="addItemInput" class="form-control mr-2" type="text" placeholder="Add an item...">
-             <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">
+    
+          <div class="content">
+    <!-- Add Item -->
+            <div class="add-item">
+              <input type="text" id="addItemInput" placeholder="Add an item....">
+              <button id="addItemButton" type="submit" class="btn btn-secondary mb-2">
                 <i class="fa fa-plus" aria-hidden="true"></i>
-             </button>                   
+             </button>
+            </div>
+    
+    <!-- Adjustable items -->
+            <ul id="insertItem">               
+            </ul>
+    
           </div>
         </div>
-        <div id="insertItem"></div>    
-      </div>
 
       
 
