@@ -9,10 +9,6 @@ ul {
     list-style-type: none;
 }
 
-.markAsDone {
-    cursor: pointer;
-}
-
-#deleteTodo {
+.col-2 {
     cursor: pointer;
 }
