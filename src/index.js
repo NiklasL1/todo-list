@@ -72,11 +72,11 @@ class todoList {
   }
 
   deleteTodo(index) {
-  this.todoArray.splice(index, 1)
+  this.todoArray.splice(index, 1);
   }
 
   editTodo(index, content) {  
-  this.todoArray[index] = content
+  this.todoArray[index] = content;
   }
   
 };
