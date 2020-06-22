@@ -43,12 +43,13 @@ class todoList {
         </div>
         </li>`); 
         
-    let node = document.createElement("SPAN");    
+    let node = document.createElement("SPAN");     
     node.addEventListener("click", () => {
-      alert("trash");      
+      const removal = document.getElementById("removal")
+      removal.parentNode.parentNode.parentNode.parentNode.removeChild(removal.parentNode.parentNode.parentNode);      
     });
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let node2 = document.createElement("SPAN");    
