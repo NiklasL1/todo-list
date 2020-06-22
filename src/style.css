@@ -12,3 +12,7 @@ ul {
 .markAsDone {
     cursor: pointer;
 }
+
+#deleteTodo {
+    cursor: pointer;
+}
