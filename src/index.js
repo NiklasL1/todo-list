@@ -9,7 +9,7 @@ addItemButton.addEventListener("click", () => {
   const addItemInput = document.getElementById('addItemInput');
   let newTodo = new todoItem(addItemInput);
   TodoList1.addTodo(newTodo);
-  console.log(TodoList1);
+  //console.log(TodoList1);
 });
 
 class todoItem {
@@ -35,22 +35,33 @@ class todoList {
     const insertItem = document.getElementById("insertItem");
             
     insertItem.insertAdjacentHTML("afterbegin",
-      `<li class= "container row">
+      `<li class= "container row">      
       <div class="col-2 bg-light border d-flex align-middle justify-content-center">   
         </div>
         <div class="col-10 bg-light border align-middle todoItem">
           ${addItemInput.value}
-        </div>
-        </li>`); 
+        </div>        
+        </li>
+        `);                     
         
     let node = document.createElement("SPAN");     
-    node.addEventListener("click", () => {
-      const removal = document.getElementById("removal")
-      removal.parentNode.parentNode.parentNode.parentNode.removeChild(removal.parentNode.parentNode.parentNode);      
-    });
+    
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
+    
+    let removal = document.getElementsByClassName("removal");
+    console.log(removal); 
+    
+      for (let i = 0; i < removal.length; i++) {
+        removal[i].addEventListener("click", () => {
+          let div = removal[i].parentElement.parentElement.parentElement;
+          div.remove();
+          console.log(div); 
+          console.log(i);        
+        });                 
+    };
+    
     
     let node2 = document.createElement("SPAN");    
     node2.addEventListener("click", () => {
