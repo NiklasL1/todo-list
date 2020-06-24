@@ -83,6 +83,7 @@ class todoList {
     `<i class="p-2 fa fa-check-square" id="check" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
     
+
     let check = document.getElementById("check");
     console.log(check); 
 
@@ -127,6 +128,8 @@ class todoList {
     todoItem.style.color = "#a7b5cc";
     todoItem.style.textDecoration = "line-through";
   }
+
+
 };
 
 let TodoList1 = new todoList("TodoList1")
