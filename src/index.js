@@ -12,6 +12,8 @@ addItemButton.addEventListener("click", () => {
   //console.log(TodoList1);
 });
 
+//Class for individual todo items
+
 class todoItem {
   constructor (content, index) {
     this.content = content;
@@ -20,18 +22,29 @@ class todoItem {
   }
 };
 
+//Class for the whole todo list
+
 class todoList {
   constructor (title, todoArray = []) {
     this.todoArray = todoArray;
     this.title = title;
   }
+  
+//Adding a Todo Item
 
   addTodo(content) {
   this.todoArray.unshift(new todoItem(content));
+  
+  //Checking that the input field is not empty
+  
   if (addItemInput.value === "") {
     alert("Cannot add empty item!");
   }
   else {
+
+    //Inserting a list item with two columns: the icons and the
+    //content of the input field
+
     const insertItem = document.getElementById("insertItem");
             
     insertItem.insertAdjacentHTML("afterbegin",
@@ -43,26 +56,27 @@ class todoList {
         </div>        
         </li>
         `);                     
-        
+    
+    //Creating a node for the delete button
+
     let node = document.createElement("SPAN");     
     
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
-    let removal = document.getElementsByClassName("removal");
+    let removal = document.getElementById("removal");
     console.log(removal); 
+
+    //Adding an event listener to delete the parent row of the delete
+    //button when it is clicked
+
+    removal.addEventListener("click", function(e){
+      TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
+    });      
     
-      for (let i = 0; i < removal.length; i++) {
-        removal[i].addEventListener("click", () => {
-          let div = removal[i].parentElement.parentElement.parentElement;
-          div.remove();
-          console.log(div); 
-          console.log(i);        
-        });                 
-    };
-    
-    
+    //Creating a node for the check button
+
     let node2 = document.createElement("SPAN");    
     node2.addEventListener("click", () => {
       alert("check");      
@@ -71,6 +85,8 @@ class todoList {
     `<i class="p-2 fa fa-check-square" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
     
+    //Creating a node for the edit button
+
     let node3 = document.createElement("SPAN");    
     node3.addEventListener("click", () => {
       alert("edit");      
@@ -83,13 +99,21 @@ class todoList {
   }
   }
 
-  deleteTodo(index) {
-  this.todoArray.splice(index, 1)
-  }
+  //Method to delete a todo item
+
+  deleteTodo(todoItem) {
+  //this.todoArray.splice(index, 1)
+  console.log(todoItem);
+  todoItem.remove();
+}
+
+  //Method to edit a todo item
 
   editTodo(index, content) {  
-  this.todoArray[index] = content
+  //this.todoArray[index] = content
   }
+
+  //Method to check a todo item
   
 };
 
