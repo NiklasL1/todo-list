@@ -12,6 +12,13 @@ addItemButton.addEventListener("click", () => {
   console.log(TodoList1);
 });
 
+const deleteTodo = document.getElementById('removetodo');
+
+// deleteTodo.addEventListener("click", () => {  
+  
+//   console.log("Hellootest");
+// });
+
 class todoItem {
   constructor (content, index) {
     this.content = content;
@@ -49,7 +56,7 @@ class todoList {
       removal.parentNode.parentNode.parentNode.parentNode.removeChild(removal.parentNode.parentNode.parentNode);      
     });
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash" id="removal" id="removetodo" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let node2 = document.createElement("SPAN");    
@@ -73,7 +80,9 @@ class todoList {
   }
 
   deleteTodo(index) {
-  this.todoArray.splice(index, 1);
+  
+  
+    this.todoArray.splice(index, 1);
   }
 
   editTodo(index, content) {  
