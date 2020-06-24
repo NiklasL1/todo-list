@@ -62,7 +62,7 @@ class todoList {
     let node = document.createElement("SPAN");     
     
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash" id="removal" id="removetodo" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let removal = document.getElementById("removal");
@@ -78,12 +78,21 @@ class todoList {
     //Creating a node for the check button
 
     let node2 = document.createElement("SPAN");    
-    node2.addEventListener("click", () => {
-      alert("check");      
-    });
+    
     node2.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-check-square" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-check-square" id="check" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
+    
+
+    let check = document.getElementById("check");
+    console.log(check); 
+
+    //Adding an event listener to change the style of the parent row
+    //when it is clicked
+    check.addEventListener("click", (e) => {
+      TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);      
+    });
+    
     
     //Creating a node for the edit button
 
@@ -114,7 +123,13 @@ class todoList {
   }
 
   //Method to check a todo item
-  
+  checkTodo(todoItem) {
+    console.log(todoItem);
+    todoItem.style.color = "#a7b5cc";
+    todoItem.style.textDecoration = "line-through";
+  }
+
+
 };
 
 let TodoList1 = new todoList("TodoList1")
