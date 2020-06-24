@@ -12,3 +12,8 @@ ul {
 .col-2 {
     cursor: pointer;
 }
+
+.checked {    
+    text-decoration: line-through;
+    color: grey;
+}

@@ -51,7 +51,7 @@ class todoList {
       `<li class= "container row">      
       <div class="col-2 bg-light border d-flex align-middle justify-content-center">   
         </div>
-        <div class="col-10 bg-light border align-middle todoItem">
+        <div class="col-10 bg-light border align-middle todoItem" id="todoText">
           ${addItemInput.value}
         </div>        
         </li>
@@ -72,18 +72,23 @@ class todoList {
     //button when it is clicked
 
     removal.addEventListener("click", function(e){
-      TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
+      var confirmBox = confirm("Are you sure you want to delete?");
+      if (confirmBox == true) {
+        TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
+      };      
     });      
     
     //Creating a node for the check button
 
     let node2 = document.createElement("SPAN");    
-    node2.addEventListener("click", () => {
-      alert("check");      
-    });
+    
     node2.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-check-square" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-check-square" id="checkit" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
+
+    checkit.addEventListener("click", (e) => {
+      TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);    
+    });
     
     //Creating a node for the edit button
 
@@ -109,11 +114,16 @@ class todoList {
 
   //Method to edit a todo item
 
-  editTodo(index, content) {  
-  //this.todoArray[index] = content
+  editTodo(todoText) {  
+  //this.todoArray[index] = content  
   }
 
   //Method to check a todo item
+
+  checkTodo(todoItem) {
+    //let todoText = document.getElementById("todoText");
+    todoItem.classList.add("checked");
+    }
   
 };
 
