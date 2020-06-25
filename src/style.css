@@ -29,3 +29,16 @@ ul {
 #check {
     color: green;    
 }
+
+#todoText { 
+    background-color:rgba(0, 0, 0, 0);   
+    border: none;
+    outline:none;
+    text-decoration: inherit;
+    color: inherit; 
+}
+
+#inherit {
+    text-decoration: inherit;
+    color: inherit;
+}
