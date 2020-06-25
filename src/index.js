@@ -51,7 +51,7 @@ class todoList {
       `<li class= "container row">      
       <div class="col-2 bg-light border d-flex align-middle justify-content-center">   
         </div>
-        <div class="col-10 bg-light border align-middle todoItem" id="todoText">
+        <div class="col-10 bg-light border align-middle todoItem">
           ${addItemInput.value}
         </div>        
         </li>
@@ -62,7 +62,7 @@ class todoList {
     let node = document.createElement("SPAN");     
     
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" id="removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash fa-2x" id="removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let removal = document.getElementById("removal");
@@ -72,10 +72,7 @@ class todoList {
     //button when it is clicked
 
     removal.addEventListener("click", function(e){
-      var confirmBox = confirm("Are you sure you want to delete?");
-      if (confirmBox == true) {
-        TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
-      };      
+      TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
     });      
     
     //Creating a node for the check button
@@ -83,13 +80,26 @@ class todoList {
     let node2 = document.createElement("SPAN");    
     
     node2.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-check-square" id="checkit" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-check-square fa-2x" id="check" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
-
-    checkit.addEventListener("click", (e) => {
-      TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);    
-    });
     
+
+    let check = document.getElementById("check");    
+
+    //Adding an event listener to change the style of the parent row
+    //when it is clicked
+    check.addEventListener("click", (e) => {
+      if (check.style.color != "lightgreen") {
+      TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);      
+      check.style.color = "lightgreen";
+      removal.style.color = "lightcoral";      
+    } else if (check.style.color = "lightgreen") {
+      TodoList1.uncheckTodo(e.target.parentElement.parentElement.parentElement);
+      check.style.color = "green";
+      removal.style.color = "red"; 
+    }   
+    });      
+
     //Creating a node for the edit button
 
     let node3 = document.createElement("SPAN");    
@@ -97,7 +107,7 @@ class todoList {
       alert("edit");      
     });
     node3.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-pencil" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-pencil fa-2x" id="edit" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node3); 
 
     document.getElementById('addItemInput').value = "";
@@ -106,25 +116,33 @@ class todoList {
 
   //Method to delete a todo item
 
-  deleteTodo(todoItem) {
-  //this.todoArray.splice(index, 1)
+  deleteTodo(todoItem) {  
   console.log(todoItem);
   todoItem.remove();
 }
 
   //Method to edit a todo item
 
-  editTodo(todoText) {  
-  //this.todoArray[index] = content  
+  editTodo(index, content) {  
+  //this.todoArray[index] = content
   }
 
   //Method to check a todo item
-
   checkTodo(todoItem) {
-    //let todoText = document.getElementById("todoText");
-    todoItem.classList.add("checked");
-    }
-  
+    console.log(todoItem);
+    todoItem.style.color = "#a7b5cc";
+    todoItem.style.textDecoration = "line-through";
+  }
+
+  //Method to uncheck a todo item
+
+  uncheckTodo(todoItem) {
+    console.log(todoItem);
+    todoItem.style.color = "#000000";
+    todoItem.style.textDecoration = "none";
+  }
+
+
 };
 
 let TodoList1 = new todoList("TodoList1")
