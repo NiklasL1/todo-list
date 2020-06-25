@@ -89,16 +89,16 @@ class todoList {
 
     let node3 = document.createElement("SPAN");    
     node3.addEventListener("click", () => {
-      alert("edit");      
+      const addItemInput = document.getElementById('addItemInput').value; 
+     node3.parentElement.parentElement.childNodes[3].innerHTML=addItemInput;     
     });
     node3.insertAdjacentHTML("afterbegin",
     `<i class="p-2 fa fa-pencil" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node3); 
-
-    document.getElementById('addItemInput').value = "";
+    
   }
+  
   }
-
   //Method to delete a todo item
 
   deleteTodo(todoItem) {
@@ -111,6 +111,8 @@ class todoList {
 
   editTodo(index, content) {  
   //this.todoArray[index] = content
+  console.log(todoItem);
+  todoItem.edit()
   }
 
   //Method to check a todo item
