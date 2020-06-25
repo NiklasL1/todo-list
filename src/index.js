@@ -3,6 +3,10 @@ editTitle.ondblclick = function () {
   this.removeAttribute('readonly');
 };
 
+let d = new Date();
+
+document.getElementById("date").insertAdjacentHTML("afterbegin", `${d}`);
+
 const addItemButton = document.getElementById('addItemButton');
 
 addItemButton.addEventListener("click", () => {  
@@ -51,11 +55,13 @@ class todoList {
       `<li class= "container row">      
       <div class="col-2 bg-light border d-flex align-middle justify-content-center">   
         </div>
-        <div class="col-10 bg-light border align-middle todoItem">
+        <div class="col-10 bg-light border align-middle">
           ${addItemInput.value}
         </div>        
         </li>
-        `);                     
+        `);
+        
+        document.getElementById('addItemInput').value = "";
     
     //Creating a node for the delete button
 
@@ -71,8 +77,11 @@ class todoList {
     //Adding an event listener to delete the parent row of the delete
     //button when it is clicked
 
-    removal.addEventListener("click", function(e){
-      TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
+    removal.addEventListener("click", function(e){      
+      let r = confirm("Delete item?");
+      if (r == true) {
+        TodoList1.deleteTodo(e.target.parentElement.parentElement.parentElement);
+      };      
     });      
     
     //Creating a node for the check button
@@ -105,7 +114,8 @@ class todoList {
     let node3 = document.createElement("SPAN");    
     node3.addEventListener("click", () => {
       const addItemInput = document.getElementById('addItemInput').value; 
-     node3.parentElement.parentElement.childNodes[3].innerHTML=addItemInput;     
+     node3.parentElement.parentElement.childNodes[3].innerHTML=addItemInput;
+     document.getElementById('addItemInput').value = "";     
     });
     node3.insertAdjacentHTML("afterbegin",
     `<i class="p-2 fa fa-pencil fa-2x" id="edit" aria-hidden="true"></i>`);      
@@ -123,11 +133,11 @@ class todoList {
 
   //Method to edit a todo item
 
-  editTodo(index, content) {  
-  //this.todoArray[index] = content
-  console.log(todoItem);
-  todoItem.edit()
-  }
+  // editTodo(index, content) {  
+  // //this.todoArray[index] = content
+  // console.log(todoItem);
+  // todoItem.edit()
+  // }
 
   //Method to check a todo item
   checkTodo(todoItem) {
