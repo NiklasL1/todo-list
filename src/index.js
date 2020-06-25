@@ -4,8 +4,16 @@ editTitle.ondblclick = function () {
 };
 
 let d = new Date();
+let hours = d.getHours();
+let seconds = d.getSeconds();
+let minutes = d.getMinutes();
+let month = d.getMonth() + 1;
+let day = d.getDate();
+let year = d.getFullYear();
 
-document.getElementById("date").insertAdjacentHTML("afterbegin", `${d}`);
+console.log(`time: ${hours}:${seconds}`);
+console.log(`day: ${month}/${day}`);
+document.getElementById("date").insertAdjacentHTML("afterbegin", `${day}/${month}/${year}, ${hours}:${minutes}`);
 
 const addItemButton = document.getElementById('addItemButton');
 
@@ -53,9 +61,9 @@ class todoList {
             
     insertItem.insertAdjacentHTML("afterbegin",
       `<li class= "container row">      
-      <div class="col-2 bg-light border d-flex align-middle justify-content-center">   
+      <div class="col-2 transparent border d-flex justify-content-center">   
         </div>
-        <div class="col-10 bg-light border align-middle">
+        <div class="col-10 transparent border center">
           ${addItemInput.value}
         </div>        
         </li>
