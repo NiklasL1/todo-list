@@ -1,3 +1,7 @@
+body {
+    font-size: 24px;
+}
+
 #listTitle {
     border-width: 0px;
     font-weight: bold;
@@ -11,4 +15,17 @@ ul {
 
 .col-2 {
     cursor: pointer;
+}
+
+.checked {    
+    text-decoration: line-through;
+    color: grey;
+}
+
+#removal {
+    color: red;    
+}
+
+#check {
+    color: green;    
 }

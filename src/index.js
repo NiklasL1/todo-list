@@ -62,7 +62,7 @@ class todoList {
     let node = document.createElement("SPAN");     
     
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash" id="removal" id="removetodo" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-trash fa-2x" id="removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let removal = document.getElementById("removal");
@@ -80,20 +80,26 @@ class todoList {
     let node2 = document.createElement("SPAN");    
     
     node2.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-check-square" id="check" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-check-square fa-2x" id="check" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
     
 
-    let check = document.getElementById("check");
-    console.log(check); 
+    let check = document.getElementById("check");    
 
     //Adding an event listener to change the style of the parent row
     //when it is clicked
     check.addEventListener("click", (e) => {
+      if (check.style.color != "lightgreen") {
       TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);      
-    });
-    
-    
+      check.style.color = "lightgreen";
+      removal.style.color = "lightcoral";      
+    } else if (check.style.color = "lightgreen") {
+      TodoList1.uncheckTodo(e.target.parentElement.parentElement.parentElement);
+      check.style.color = "green";
+      removal.style.color = "red"; 
+    }   
+    });      
+
     //Creating a node for the edit button
 
     let node3 = document.createElement("SPAN");    
@@ -101,7 +107,7 @@ class todoList {
       alert("edit");      
     });
     node3.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-pencil" aria-hidden="true"></i>`);      
+    `<i class="p-2 fa fa-pencil fa-2x" id="edit" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node3); 
 
     document.getElementById('addItemInput').value = "";
@@ -110,8 +116,7 @@ class todoList {
 
   //Method to delete a todo item
 
-  deleteTodo(todoItem) {
-  //this.todoArray.splice(index, 1)
+  deleteTodo(todoItem) {  
   console.log(todoItem);
   todoItem.remove();
 }
@@ -127,6 +132,14 @@ class todoList {
     console.log(todoItem);
     todoItem.style.color = "#a7b5cc";
     todoItem.style.textDecoration = "line-through";
+  }
+
+  //Method to uncheck a todo item
+
+  uncheckTodo(todoItem) {
+    console.log(todoItem);
+    todoItem.style.color = "#000000";
+    todoItem.style.textDecoration = "none";
   }
 
 
