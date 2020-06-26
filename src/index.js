@@ -13,7 +13,7 @@ let year = d.getFullYear();
 
 console.log(`time: ${hours}:${seconds}`);
 console.log(`day: ${month}/${day}`);
-document.getElementById("date").insertAdjacentHTML("afterbegin", `${day}/${month}/${year}, ${hours}:${minutes}`);
+document.getElementById("date").insertAdjacentHTML("afterbegin", `${day}.${month}.${year} <br> ${hours}:${minutes}`);
 
 const addItemButton = document.getElementById('addItemButton');
 
@@ -60,10 +60,10 @@ class todoList {
     const insertItem = document.getElementById("insertItem");
             
     insertItem.insertAdjacentHTML("afterbegin",
-      `<li class= "container row">      
-      <div class="col-2 transparent border d-flex justify-content-center">   
+      `<li class= "container row ">      
+      <div class="col-2 transparent bordercolor d-flex justify-content-center mt-2">   
         </div>
-        <div class="col-10 transparent border center">
+        <div class="col-10 transparent bordercolor center mt-2 ">
           ${addItemInput.value}
         </div>        
         </li>
@@ -76,7 +76,7 @@ class todoList {
     let node = document.createElement("SPAN");     
     
     node.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-trash fa-2x" id="removal" aria-hidden="true"></i>`);      
+    `<i class="p-2 fas fa-times fa-2x" id="removal" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node);
     
     let removal = document.getElementById("removal");
@@ -97,7 +97,7 @@ class todoList {
     let node2 = document.createElement("SPAN");    
     
     node2.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-check-square fa-2x" id="check" aria-hidden="true"></i>`);      
+    `<i class="p-2 far fa-check-circle fa-2x" id="check" aria-hidden="true"></i>`);      
     document.querySelector(".col-2").appendChild(node2);
     
 
@@ -106,14 +106,14 @@ class todoList {
     //Adding an event listener to change the style of the parent row
     //when it is clicked
     check.addEventListener("click", (e) => {
-      if (check.style.color != "lightgreen") {
+      if (check.style.color != "rgba(47, 102, 47, 0.99)") {
       TodoList1.checkTodo(e.target.parentElement.parentElement.parentElement);      
-      check.style.color = "lightgreen";
-      removal.style.color = "lightcoral";      
-    } else if (check.style.color = "lightgreen") {
+      check.style.color = "rgba(47, 102, 47, 0.99)";
+      removal.style.color = "rgba(21, 57, 122, 0.4)";      
+    } else if (check.style.color = "rgba(47, 102, 47, 0.99)") {
       TodoList1.uncheckTodo(e.target.parentElement.parentElement.parentElement);
-      check.style.color = "green";
-      removal.style.color = "red"; 
+      check.style.color = "rgba(47, 102, 47, 0.692)";
+      removal.style.color = "rgba(21, 57, 122, 0.644)"; 
     }   
     });      
 
@@ -150,7 +150,7 @@ class todoList {
   //Method to check a todo item
   checkTodo(todoItem) {
     console.log(todoItem);
-    todoItem.style.color = "#a7b5cc";
+    todoItem.style.color = "rgba(35, 34, 63, 0.4)";
     todoItem.style.textDecoration = "line-through";
   }
 
@@ -158,7 +158,7 @@ class todoList {
 
   uncheckTodo(todoItem) {
     console.log(todoItem);
-    todoItem.style.color = "#000000";
+    todoItem.style.color = "rgba(35, 34, 63, 0.829)";
     todoItem.style.textDecoration = "none";
   }
 
