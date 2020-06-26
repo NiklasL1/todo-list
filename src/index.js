@@ -63,8 +63,11 @@ class todoList {
       `<li class= "container row ">      
       <div class="col-2 transparent bordercolor d-flex justify-content-center mt-2">   
         </div>
-        <div class="col-10 transparent bordercolor center mt-2 ">
-          ${addItemInput.value}
+
+
+        <div class="col-10 transparent center mt-2" id="inherit">
+          <input "id="todoText" "type="text" value="${addItemInput.value}" />
+
         </div>        
         </li>
         `);
@@ -119,15 +122,15 @@ class todoList {
 
     //Creating a node for the edit button
 
-    let node3 = document.createElement("SPAN");    
-    node3.addEventListener("click", () => {
-      const addItemInput = document.getElementById('addItemInput').value; 
-     node3.parentElement.parentElement.childNodes[3].innerHTML=addItemInput;
-     document.getElementById('addItemInput').value = "";     
-    });
-    node3.insertAdjacentHTML("afterbegin",
-    `<i class="p-2 fa fa-pencil fa-2x" id="edit" aria-hidden="true"></i>`);      
-    document.querySelector(".col-2").appendChild(node3); 
+    // let node3 = document.createElement("SPAN");    
+    // node3.addEventListener("click", () => {
+    //   const addItemInput = document.getElementById('addItemInput').value; 
+    //  node3.parentElement.parentElement.childNodes[3].innerHTML=addItemInput;
+    //  document.getElementById('addItemInput').value = "";     
+    // });
+    // node3.insertAdjacentHTML("afterbegin",
+    // `<i class="p-2 fa fa-pencil fa-2x" id="edit" aria-hidden="true"></i>`);      
+    // document.querySelector(".col-2").appendChild(node3); 
     
   }
   
