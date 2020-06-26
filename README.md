@@ -19,7 +19,8 @@ File Manifest:
 - Index.js
 - Style.css
 - READme.md
-- External resources:
+
+External resources:
 - Bootstrap
 - Fontawesome 4
 - Google Fonts
