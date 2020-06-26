@@ -1,8 +1,3 @@
-let editTitle = document.getElementById('listTitle');
-editTitle.ondblclick = function () {
-  this.removeAttribute('readonly');
-};
-
 let d = new Date();
 let hours = d.getHours();
 let seconds = d.getSeconds();
