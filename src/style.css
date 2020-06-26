@@ -1,14 +1,19 @@
-
 body {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     /* background-image: url("https://images.unsplash.com/photo-1538947151057-dfe933d688d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); */
     background-image: url("/img/rainbow.jpg");
     /* background-image: url("/img/rainbow1.jpg"); */
-    background-size: cover;
+    background-size: auto;
+    background-repeat: no-repeat;
     color: white;
 
 }
+
+.row {
+    color: rgba(35, 34, 63, 0.829);    
+}
+
 /* Add List Title */
 #listTitle {
     padding-bottom: 10px;
@@ -35,7 +40,7 @@ body {
     outline: none;
     color: white;    
     text-align: center;
-    border-bottom: 3px dotted lightgrey;
+    border-bottom: 1px solid lightgrey;
     margin-bottom: 2%;
     background-color:rgba(0, 0, 0, 0); 
 }
@@ -120,7 +125,7 @@ h1 {
     background-color:rgba(0, 0, 0, 0);   
     border: none;
     outline:none;
-    text-decoration: inherit;
+    text-decoration: inherit;    
     color: inherit;
     width: 100%;  
 }
