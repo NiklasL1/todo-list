@@ -1,6 +1,5 @@
-# todo-list - a group project
+# Todo-List - a group project by WBS Coding School
 
-Todo-List - a group project by WBS Coding School
 Features:
 - Add a todo
 - Delete a single todo
