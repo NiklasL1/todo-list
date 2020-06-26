@@ -55,7 +55,7 @@ class todoList {
     const insertItem = document.getElementById("insertItem");
             
     insertItem.insertAdjacentHTML("afterbegin",
-      `<li class= "container row ">      
+      `<li class= "container row">      
       <div class="col-2 transparent bordercolor d-flex justify-content-center mt-2">   
         </div>
         <div class="col-10 transparent center mt-2" id="inherit">
