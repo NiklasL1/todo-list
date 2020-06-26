@@ -35,8 +35,9 @@ class todoList {
   constructor (title, todoArray = []) {
     this.todoArray = todoArray;
     this.title = title;
-  }
-  
+  } 
+
+
 //Adding a Todo Item
 
   addTodo(content) {
@@ -129,6 +130,7 @@ class todoList {
   }
   //Method to delete a todo item
 
+
   deleteTodo(todoItem) {  
   console.log(todoItem);
   todoItem.remove();
@@ -159,5 +161,18 @@ class todoList {
 
 
 };
+
+//Deleting all todos
+
+let insertItem = document.getElementById("insertItem");
+const deleteAll = document.getElementById("deleteAllButton")
+
+deleteAll.addEventListener("click", function() {
+  let r = confirm("Clear list?");
+      if (r == true) {
+        insertItem.innerHTML="";
+      };
+});
+
 
 let TodoList1 = new todoList("TodoList1")
