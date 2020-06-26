@@ -59,7 +59,7 @@ class todoList {
       <div class="col-2 transparent bordercolor d-flex justify-content-center mt-2">   
         </div>
         <div class="col-10 transparent center mt-2" id="inherit">
-          <input id="todoText" type="text" value="${addItemInput.value}" />
+          <input class="font" id="todoText" type="text" value="${addItemInput.value}" />
         </div>        
         </li>
         `);
@@ -153,7 +153,7 @@ class todoList {
 
   uncheckTodo(todoItem) {
     console.log(todoItem);
-    todoItem.style.color = "rgba(35, 34, 63, 0.829)";
+    todoItem.style.color = "rgba(32, 20, 100, 0.788)";
     todoItem.style.textDecoration = "none";
   }
 

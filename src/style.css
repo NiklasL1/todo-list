@@ -11,7 +11,7 @@ body {
 }
 
 .row {
-    color: rgba(35, 34, 63, 0.829);    
+    color: rgba(32, 20, 100, 0.788);   
 }
 
 /* Add List Title */
@@ -53,10 +53,11 @@ body {
     border: none;
     outline: none;
     border-radius: 10px;
+    color: rgba(26, 10, 116, 0.918);    
 }
 
 #addItemButton:hover {
-    background-color: lightseagreen;
+    background-color: rgba(26, 10, 116, 0.308);   
     color: white;
 } 
 
@@ -72,9 +73,8 @@ ul {
     cursor: pointer;
 }
 
-.checked {    
-    text-decoration: line-through;
-    color: grey;
+.font {
+    font-size: 1.2em;
 }
 
 #removal {
@@ -87,9 +87,6 @@ ul {
 
 .header {
     padding: 50px;
-    /* display: flex;
-    align-items: center; */
-    /* justify-content: space-around; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -122,7 +119,7 @@ h1 {
 }
 
 #todoText { 
-    background-color:rgba(0, 0, 0, 0);   
+    background-color:rgba(167, 49, 49, 0);   
     border: none;
     outline:none;
     text-decoration: inherit;    
