@@ -69,6 +69,7 @@ body {
     border: none;
     outline: none;
     border-radius: 10px;
+    color: rgba(26, 10, 116, 0.918);  
 }
 
 #deleteAllButton:hover {
