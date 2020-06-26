@@ -58,11 +58,8 @@ class todoList {
       `<li class= "container row ">      
       <div class="col-2 transparent bordercolor d-flex justify-content-center mt-2">   
         </div>
-
-
         <div class="col-10 transparent center mt-2" id="inherit">
-          <input "id="todoText" "type="text" value="${addItemInput.value}" />
-
+          <input id="todoText" type="text" value="${addItemInput.value}" />
         </div>        
         </li>
         `);
